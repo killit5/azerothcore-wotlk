@@ -18,6 +18,14 @@
 #include "ScriptMgr.h"
 #include "ScriptMgrMacros.h"
 
+void ScriptMgr::OnAfterPlayerApplyItemBonuses(Player* player, ItemTemplate const* proto, uint8 slot, bool apply, bool only_level_scale /*= false*/)
+{
+    ExecuteScript<PlayerScript>([&](PlayerScript* script)
+    {
+        script->OnAfterApplyItemBonuses(player, proto, slot, apply, only_level_scale);
+    });
+}
+
 void ScriptMgr::OnBeforePlayerDurabilityRepair(Player* player, ObjectGuid npcGUID, ObjectGuid itemGUID, float& discountMod, uint8 guildBank)
 {
     ExecuteScript<PlayerScript>([&](PlayerScript* script)
