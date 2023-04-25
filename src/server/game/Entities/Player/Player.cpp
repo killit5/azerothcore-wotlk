@@ -6789,6 +6789,8 @@ void Player::_ApplyItemBonuses(ItemTemplate const* proto, uint8 slot, bool apply
         if (feral_bonus)
             ApplyFeralAPBonus(feral_bonus, apply);
     }
+    
+    sScriptMgr->OnAfterPlayerApplyItemBonuses(this, proto, slot, apply, only_level_scale);
 }
 
 void Player::_ApplyWeaponDamage(uint8 slot, ItemTemplate const* proto, ScalingStatValuesEntry const* ssv, bool apply)
