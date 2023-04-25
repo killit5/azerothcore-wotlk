@@ -989,6 +989,8 @@ protected:
     PlayerScript(const char* name);
 
 public:
+	virtual void OnAfterApplyItemBonuses(Player* /*player*/, ItemTemplate const* /*prot*/, uint8 /*slot*/, bool /*apply*/, bool /*only_level_scale*/) { }
+	
     virtual void OnPlayerReleasedGhost(Player* /*player*/) { }
 
     // Called on Send Initial Packets Before Add To Map
@@ -2226,6 +2228,7 @@ public: /* AchievementCriteriaScript */
     bool OnCriteriaCheck(uint32 scriptId, Player* source, Unit* target, uint32 criteria_id);
 
 public: /* PlayerScript */
+	void OnAfterPlayerApplyItemBonuses(Player* player, ItemTemplate const* proto, uint8 slot, bool apply, bool only_level_scale /*= false*/);
     void OnBeforePlayerUpdate(Player* player, uint32 p_time);
     void OnPlayerUpdate(Player* player, uint32 p_time);
     void OnSendInitialPacketsBeforeAddToMap(Player* player, WorldPacket& data);
