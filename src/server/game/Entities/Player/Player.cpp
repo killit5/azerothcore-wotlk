@@ -5848,11 +5848,17 @@ float Player::CalculateReputationGain(ReputationSource source, uint32 creatureOr
             return 0;
 
         percent *= repRate;
+		
+
+			
     }
 
     if (source != REPUTATION_SOURCE_SPELL && GetsRecruitAFriendBonus(false))
         percent *= 1.0f + sWorld->getRate(RATE_REPUTATION_RECRUIT_A_FRIEND_BONUS);
-
+	
+	if (HasAura(90015))
+		percent *= 10.0;
+	
     return CalculatePct(rep, percent);
 }
 
@@ -6788,9 +6794,9 @@ void Player::_ApplyItemBonuses(ItemTemplate const* proto, uint8 slot, bool apply
         sScriptMgr->OnGetFeralApBonus(this, feral_bonus, dpsMod, proto, ssv);
         if (feral_bonus)
             ApplyFeralAPBonus(feral_bonus, apply);
+
+        sScriptMgr->OnAfterPlayerApplyItemBonuses(this, proto, slot, apply, only_level_scale);
     }
-    
-    sScriptMgr->OnAfterPlayerApplyItemBonuses(this, proto, slot, apply, only_level_scale);
 }
 
 void Player::_ApplyWeaponDamage(uint8 slot, ItemTemplate const* proto, ScalingStatValuesEntry const* ssv, bool apply)
