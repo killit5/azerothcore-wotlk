@@ -5853,6 +5853,9 @@ float Player::CalculateReputationGain(ReputationSource source, uint32 creatureOr
     if (source != REPUTATION_SOURCE_SPELL && GetsRecruitAFriendBonus(false))
         percent *= 1.0f + sWorld->getRate(RATE_REPUTATION_RECRUIT_A_FRIEND_BONUS);
 
+   	if (HasAura(90015))
+		percent *= 10.0;
+    
     return CalculatePct(rep, percent);
 }
 
