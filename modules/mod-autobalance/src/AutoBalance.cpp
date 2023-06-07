@@ -926,6 +926,9 @@ public:
 		else
 			creatureABInfo->HealthMultiplier =   healthMultiplier * defaultMultiplier * globalRate;
 		
+		if (creature->GetEntry() == 36838 || creature->GetEntry() == 36839)
+			creatureABInfo->HealthMultiplier =   5 * defaultMultiplier * globalRate;
+		
         if (creatureABInfo->HealthMultiplier <= MinHPModifier)
         {
             creatureABInfo->HealthMultiplier = MinHPModifier;
@@ -1057,6 +1060,9 @@ public:
 		else
 			damageMul = defaultMultiplier * globalRate * damageMultiplier;
 
+		if (creature->GetEntry() == 36838 || creature->GetEntry() == 36839)
+			damageMul = defaultMultiplier * globalRate * 5;
+		
         // Can not be less then Min_D_Mod
         if (damageMul <= MinDamageModifier)
         {
