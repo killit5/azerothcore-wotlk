@@ -7705,6 +7705,165 @@ void Player::SendLoot(ObjectGuid guid, LootType loot_type)
         LOG_DEBUG("loot", "guid.IsGameObject");
         GameObject* go = GetMap()->GetGameObject(guid);
 
+        if (go->GetGOInfo()->type == GAMEOBJECT_TYPE_CHEST)
+		{
+			int const nombregob(137);
+			int tabnombregob[nombregob];
+
+			tabnombregob[0] = 324;  
+			tabnombregob[1] = 1610;  
+			tabnombregob[2] = 1617;  
+			tabnombregob[3] = 1618;  
+			tabnombregob[4] = 1619;  
+			tabnombregob[5] = 1620;  
+			tabnombregob[6] = 1621;  
+			tabnombregob[7] = 1622;  
+			tabnombregob[8] = 1623;  
+			tabnombregob[9] = 1624;
+			tabnombregob[10] = 1628;  
+			tabnombregob[11] = 1667;  
+			tabnombregob[12] = 1731;  
+			tabnombregob[13] = 1732;  
+			tabnombregob[14] = 1733;  
+			tabnombregob[15] = 1734;  
+			tabnombregob[16] = 1735;  
+			tabnombregob[17] = 2040;  
+			tabnombregob[18] = 2041;  
+			tabnombregob[19] = 2042;
+			tabnombregob[20] = 2043;  
+			tabnombregob[21] = 2044;  
+			tabnombregob[22] = 2045;  
+			tabnombregob[23] = 2046;  
+			tabnombregob[24] = 2047;  
+			tabnombregob[25] = 2054;  
+			tabnombregob[26] = 2055;  
+			tabnombregob[27] = 2653;  
+			tabnombregob[28] = 2866;  
+			tabnombregob[29] = 3724;
+			tabnombregob[30] = 3725;  
+			tabnombregob[31] = 3726;  
+			tabnombregob[32] = 3727;  
+			tabnombregob[33] = 3729;  
+			tabnombregob[34] = 3730;  
+			tabnombregob[35] = 3763;  
+			tabnombregob[36] = 3764;  
+			tabnombregob[37] = 19903;  
+			tabnombregob[38] = 73939;  
+			tabnombregob[39] = 73940;
+			tabnombregob[40] = 73941;  
+			tabnombregob[41] = 103711;  
+			tabnombregob[42] = 103713;  
+			tabnombregob[43] = 105569;  
+			tabnombregob[44] = 123309;  
+			tabnombregob[45] = 123310;  
+			tabnombregob[46] = 123848;  
+			tabnombregob[47] = 142140;  
+			tabnombregob[48] = 142141;  
+			tabnombregob[49] = 142142;
+			tabnombregob[50] = 142143;  
+			tabnombregob[51] = 142144;  
+			tabnombregob[52] = 142145;  
+			tabnombregob[53] = 150079;  
+			tabnombregob[54] = 150080;  
+			tabnombregob[55] = 150081;  
+			tabnombregob[56] = 150082;  
+			tabnombregob[57] = 165658;  
+			tabnombregob[58] = 175404;  
+			tabnombregob[59] = 175888;
+			tabnombregob[60] = 175891;  
+			tabnombregob[61] = 175892;  
+			tabnombregob[62] = 175893;  
+			tabnombregob[63] = 176356;  
+			tabnombregob[64] = 176583;  
+			tabnombregob[65] = 176584;  
+			tabnombregob[66] = 176586;  
+			tabnombregob[67] = 176587;  
+			tabnombregob[68] = 176588;  
+			tabnombregob[69] = 176589;
+			tabnombregob[70] = 176636;  
+			tabnombregob[71] = 176637;  
+			tabnombregob[72] = 176638;  
+			tabnombregob[73] = 176639;  
+			tabnombregob[74] = 176640;  
+			tabnombregob[75] = 176641;  
+			tabnombregob[76] = 176642;  
+			tabnombregob[77] = 176643;  
+			tabnombregob[78] = 176645;  
+			tabnombregob[79] = 177388;
+			tabnombregob[80] = 180164;  
+			tabnombregob[81] = 180165;  
+			tabnombregob[82] = 180166;  
+			tabnombregob[83] = 180167;  
+			tabnombregob[84] = 180168;  
+			tabnombregob[85] = 180215;  
+			tabnombregob[86] = 181068;  
+			tabnombregob[87] = 181069;  
+			tabnombregob[88] = 181107;  
+			tabnombregob[89] = 181108;
+			tabnombregob[90] = 181109;  
+			tabnombregob[91] = 181166;  
+			tabnombregob[92] = 181238;  
+			tabnombregob[93] = 181239;  
+			tabnombregob[94] = 181248;  
+			tabnombregob[95] = 181249;  
+			tabnombregob[96] = 181270;  
+			tabnombregob[97] = 181275;  
+			tabnombregob[98] = 181276;  
+			tabnombregob[99] = 181277;
+			tabnombregob[100] = 181278;
+			tabnombregob[101] = 181280;
+			tabnombregob[102] = 181555;
+			tabnombregob[103] = 181556;
+			tabnombregob[104] = 181557;
+			tabnombregob[105] = 181569;
+			tabnombregob[106] = 181570;
+			tabnombregob[107] = 182532;
+			tabnombregob[108] = 183043;
+			tabnombregob[109] = 183044;
+			tabnombregob[110] = 183046;
+			tabnombregob[111] = 184466;
+			tabnombregob[112] = 185224;
+			tabnombregob[113] = 185225;
+			tabnombregob[114] = 185226;
+			tabnombregob[115] = 185302;
+			tabnombregob[116] = 185557;
+			tabnombregob[117] = 187072;
+			tabnombregob[118] = 187333;
+			tabnombregob[119] = 188113;
+			tabnombregob[120] = 189973;
+			tabnombregob[121] = 189978;
+			tabnombregob[122] = 189979;
+			tabnombregob[123] = 189980;
+			tabnombregob[124] = 189981;
+			tabnombregob[125] = 190169;
+			tabnombregob[126] = 190170;
+			tabnombregob[127] = 190171;
+			tabnombregob[128] = 190172;
+			tabnombregob[129] = 190173;
+			tabnombregob[130] = 190174;
+			tabnombregob[131] = 190175;
+			tabnombregob[132] = 190176;
+			tabnombregob[133] = 191019;
+			tabnombregob[134] = 191133;
+			tabnombregob[135] = 191576;
+			tabnombregob[136] = 195036;
+
+			for(int i(0); i<nombregob; ++i)	
+			{
+				if(go->GetEntry()== tabnombregob[i])
+				{
+					srand (time(NULL));
+					if (rand() % 5 == 0)
+					{
+						float ang = GetOrientation();
+						float rot2 = sin(ang / 2);
+						float rot3 = cos(ang / 2);
+						SummonGameObject(go->GetEntry(), GetPositionX()+3, GetPositionY()+3, GetPositionZ(), GetOrientation(), 0, 0, rot2, rot3, 0);
+					}	
+				}
+			}
+		}
+        
         // not check distance for GO in case owned GO (fishing bobber case, for example)
         // And permit out of range GO with no owner in case fishing hole
         if (!go || (loot_type != LOOT_FISHINGHOLE && ((loot_type != LOOT_FISHING && loot_type != LOOT_FISHING_JUNK) || go->GetOwnerGUID() != GetGUID()) && !go->IsWithinDistInMap(this)) || (loot_type == LOOT_CORPSE && go->GetRespawnTime() && go->isSpawnedByDefault()))
