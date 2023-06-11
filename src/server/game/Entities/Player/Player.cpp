@@ -7858,7 +7858,8 @@ void Player::SendLoot(ObjectGuid guid, LootType loot_type)
 						float ang = GetOrientation();
 						float rot2 = sin(ang / 2);
 						float rot3 = cos(ang / 2);
-						SummonGameObject(go->GetEntry(), GetPositionX()+3, GetPositionY()+3, GetPositionZ(), GetOrientation(), 0, 0, rot2, rot3, 0);
+						SummonGameObject(go->GetEntry(), go->GetPositionX(), go->GetPositionY(), go->GetPositionZ(), go->GetOrientation(), 0, 0, rot2, rot3, 20);
+						break;
 					}	
 				}
 			}
